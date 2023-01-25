@@ -1,5 +1,6 @@
 const express = require("express")
-const body_parser = require("body-parser")
+const body_parser = require("body-parser");
+const pageContacts = require("./contact");
 const app = express();
 
 app.use(body_parser.urlencoded({ extended: false}))
@@ -11,7 +12,7 @@ app.get('/', (request, response) => {
         age: '18',
         class: "IS-22-11"
     }
-    response.json(student)
+    response.send(pageContacts)
 })
 
 app.listen(8000, () => {
