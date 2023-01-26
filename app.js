@@ -4,6 +4,7 @@ const pageContacts = require("./contact");
 const { request, response } = require("express");
 const aboutMe = require("./about_me");
 const shop = require("./shop");
+const main = require("./main");
 const app = express();
 
 app.use(body_parser.urlencoded({ extended: false}))
@@ -19,7 +20,7 @@ app.get('/conctact', (request, response) => {
         age: '18',
         class: "IS-22-11"
     }
-    response.send(pageContacts)
+    response.send(main)
 })
 
 app.get('/aboutMe', (request, response) => {
